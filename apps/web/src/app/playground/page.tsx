@@ -64,6 +64,18 @@ export default function PlaygroundPage() {
     }
   };
 
+  const clearDB = (client: "A" | "B") => {
+      if (client === "A") {
+        setClientA([]);
+        setInputA("");
+      } else {
+        setClientB([]);
+        setInputB("");
+      }
+      setSyncCount(0);
+    };
+
+
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col font-sans">
       {/* HEADER */}
@@ -162,6 +174,14 @@ export default function PlaygroundPage() {
               >
                 <Save className="w-4 h-4" /> Save
               </button>
+
+              <button
+                type="button"
+                onClick={() => clearDB("A")}
+                className="bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-red-600 flex items-center gap-2"
+              >
+                <Database className="w-4 h-4" /> Clear DB
+              </button>
             </form>
           </div>
         </div>
@@ -220,6 +240,14 @@ export default function PlaygroundPage() {
                 className="bg-black text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-800 flex items-center gap-2"
               >
                 <Save className="w-4 h-4" /> Save
+              </button>
+
+              <button
+                type="button"
+                onClick={() => clearDB("B")}
+                className="bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-red-600 flex items-center gap-2"
+              >
+                <Database className="w-4 h-4" /> Clear DB
               </button>
             </form>
           </div>
