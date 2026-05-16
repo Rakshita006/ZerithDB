@@ -65,16 +65,15 @@ export default function PlaygroundPage() {
   };
 
   const clearDB = (client: "A" | "B") => {
-      if (client === "A") {
-        setClientA([]);
-        setInputA("");
-      } else {
-        setClientB([]);
-        setInputB("");
-      }
-      setSyncCount(0);
-    };
-
+    if (client === "A") {
+      setClientA([]);
+      setInputA("");
+    } else {
+      setClientB([]);
+      setInputB("");
+    }
+    setSyncCount(0);
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col font-sans">
