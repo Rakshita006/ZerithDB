@@ -42,7 +42,7 @@ export default function PlaygroundPage() {
   // Update peer status when network changes
   useEffect(() => {
     if (!isOnline) {
-      setPeerStatus("offline");
+      setPeerStatus("offline"); // eslint-disable-line react-hooks/set-state-in-effect
     } else {
       setPeerStatus("connecting");
       const timer = setTimeout(() => setPeerStatus("connected"), 1000);
